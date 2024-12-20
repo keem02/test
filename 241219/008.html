@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        color: white;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #264653;
+      }
+
+      .container {
+        display: grid;
+        grid-template-rows: auto 1fr auto; /* header, main, footer */
+        grid-template-columns: 1fr; /* 하나의 열 */
+        grid-template-areas:
+          "header"
+          "main"
+          "footer";
+        width: 100%;
+      }
+
+      header, footer {
+        background-color: #f4a261;
+        padding: 20px;
+        text-align: center;
+        margin: 0 20px; /* 좌우 20px 여백 */
+      }
+
+      footer {
+        background-color: #f4a261; /* header와 동일한 색상 */
+      }
+
+      .main {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 3fr 1fr; /* article 3, aside 1 비율 */
+        gap: 20px;
+        padding: 20px;
+        width: 100%;
+      }
+
+      section {
+        background-color: #e9c46a;
+        padding: 20px;
+        text-align: center;
+      }
+
+      aside {
+        background-color: #2a9d8f;
+        padding: 20px;
+        text-align: center;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>header</header>
+      <div class="main">
+        <section>section > article</section>
+        <aside>aside</aside>
+      </div>
+      <footer>footer</footer>
+    </div>
+  </body>
+</html>

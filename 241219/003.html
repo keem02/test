@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .static {
+                position: static;
+                background-color: rgba(0, 0, 255, 0.5);
+            }
+
+            .static,
+            .absolute1,
+            .absolute2 {
+                width: 300px;
+                height: 300px;
+            }
+
+            .parent {
+                position: relative;
+                margin: 50px;
+            }
+
+            .absolute1 {
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                background-color: rgba(56, 30, 224, 0.5);
+                top: 50px;
+                left: 143px;
+            }
+
+            .absolute2 {
+                position: absolute;
+                border: 1px solid black; /* Adds a 1px black border */
+                background-color: rgba(241, 241, 241, 0.5); /* Corrected background-color syntax */
+                top: 0;
+                left: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="parent">
+            <div class="absolute1"></div>
+        </div>
+        <div class="absolute2"></div>
+    </body>
+</html>

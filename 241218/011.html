@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        p {
+            display: inline-block;
+            padding: 15px 25px;
+        }
+        /* 1.Hello 스타일 */
+        p:first-of-type {
+            border: 5px solid black; /* 검정 테두리 */
+            background-color: #4a4a4a; /* 진한 회색 배경 */
+            width: 100px; /* 너비 설정 */
+            text-align: center; /* 텍스트 가운데 정렬 */
+            color: white; /* 텍스트 색상 흰색 */
+            transition: background-color 0.3s; /* 부드러운 전환 효과 */
+        }
+        /* 마우스 롤오버 시 배경색 변경 */
+        p:first-of-type:hover {
+            background-color: #d3d3d3; /* 옅은 회색 배경 */
+        }
+    </style>
+</head>
+<body>
+    <p>1.Hello👋</p>
+    <style>
+        .box {
+            width: 150px;
+            height: 50px;
+            background-color: #800080; /* 배경색 설정 */
+            border: 5px dotted rgb(133, 74, 157); /* 5px 두께의 빨간 점선 테두리 */
+        }
+    </style>
+    <div class="box"><font color=white><center>2.Hello👋</center></font></div>
+    
+    <style>
+        div {
+            width: 80px;
+            height: 25px;
+            background-color: rgb(186, 150, 150);
+            margin-bottom: 3px;
+        }
+        .box3 {
+            border-top-left-radius: 0px;
+            border-top-right-radius: 100;
+            border-bottom-left-radius: 100;
+            border-bottom-right-radius: 100;
+        }
+    </style>
+    <div class="box3">3.Hello👋</div>
+</body>
+</html>
