@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<style>
+    .js {
+    /*클래스 값은 . 을 붙여 id값과 구분한다*/
+    font-weight: bold;
+    color: crimson;
+    }
+    #first { /*id값은#을 붙여서 클래스 문법과 다르게 사용한다.*/
+        color: #141edc;
+    }
+    span { /*모든 span 태그에 대해서 파란색으로 바꾸고 싶다.*/
+        color: #dc142b;
+    }
+    /*아이디가 가장 우선순위가 높고 그다음은 클래스이다.*/
+</style>
+</head>
+<body>
+<input type="button" value="빨강" onclick="
+document.querySelector('body').style.backgroundColor = 'red'; <!--버튼 속성에서 버튼을 클릭시 바탕화면화 글씨가 변경되는 스크립트-->
+document.querySelector('body').style.color = 'white';
+">
+<input type="button" value="노랑" onclick="
+document.querySelector('body').style.backgroundColor = 'yellow'; <!--버튼 속성에서 버튼을 클릭시 바탕화면화 글씨가 변경되는 스크립트-->
+document.querySelector('body').style.color = 'white';
+">
+<input type="button" value="초록" onclick="
+document.querySelector('body').style.backgroundColor = 'green'; <!--버튼 속성에서 버튼을 클릭시 바탕화면화 글씨가 변경되는 스크립트-->
+document.querySelector('body').style.color = 'white';
+">
+<h2 style="color: powderblue;background-color: aliceblue">java script</h2>
+<p style="color: chocolate">
+    <div>div 태그는 무색 무취의 태그이다. 단지 여 문단의 스타일을 적용 시키기 위해서 적용된 태그이다.</div>
+
+    <span style="font-weight: bold;color: chocolate">span 태그도 div태그와 성격은 같으나, 줄바뀜이 되지 않는다는 것이 다른점이다.</span>
+
+    <span id="first" class="js"> 클래스는 그룹핑의 의미이고 id는 식별한다는 의미이다. 그래서 클래스 속성이 먼저 부여되어 있지만, id와 같이 지정되어 있으면 id값을 반영한다.
+        클래스는 광범위의 의미이고, 예외적 디자인을 바꾸는것은 id를 사용하여 적용할 수 있다.
+        선택자를 통한 문법 = 헤드 부분에 설정되어 있는 .js가 span태그의 js와 맞물려 해당 부분을 볼드 처리하는 css 문법이다.</span>
+
+    <span>span 태그만 적용된 태그를 파란색으로 변경한다.</span>
+
+    <span>id 선택자가 가장 우선순위가 높으므로, 위에 적용된 태그도 span 태그이지만, 파란색으로 변경되지 않는다.</span>
+
+
+</p>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Document</title>
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+    <p>This is a paragraph.</p>
+
+    <script>
+        console.log(document.head); // <head>...</head>
+console.log(document.body); // <body>...</body>
+console.log(document.body.childNodes); // NodeList(3) [#text, h1, p]
+console.log(document.body.childNodes[1]); // <h1>Hello, World!</h1>
+console.log(document.body.childNodes[1].tagName); // H1
+console.log(document.body.childNodes[1].innerText); // Hello, World!
+console.log(document.body.childNodes[2].nodeType); // 1 (Element Node)
+    </script>
+  </body>
+</html>
