@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    const root = document.getElementById('root');
+        const target = document.querySelector('.target');
+        const status = document.getElementById('intersectionStatus');
+
+        const observer = new IntersectionObserver(
+            (entry) => {
+                console.log(entry);
+                if (entry[0].isIntersecting) {
+                    status.textContent = '교차 중';
+                } else {
+                    status.textContent = '교차하지 않음';
+                }
+            },
+            {
+                root: root,    // 관찰할 루트 지정
+                threshold: 0.3 // 30% 겹쳤을 때 감지합니다.
+            }
+        );
+
+        observer.observe(target); // 관찰 시작!
+        // observer.unobserve(target); // 특정 요소의 관찰을 중지
+        observer.disconnect(); // 모든 요소의 관찰을 중지
+</body>
+</html>

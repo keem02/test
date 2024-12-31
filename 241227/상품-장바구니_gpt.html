@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+    <style>
+        #product-list {
+            margin-bottom: 20px;
+        }
+
+        .product {
+            margin: 5px 0;
+            padding: 10px;
+            background-color: lightblue;
+            border: 1px solid blue;
+            cursor: grab;
+        }
+
+        #cart {
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px dashed gray;
+            min-height: 100px;
+            text-align: center;
+            background-color: white;
+        }
+
+        #cart.over {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <h2>제품 목록</h2>
+    <div id="product-list">
+        <div class="product" draggable="true">상품 1</div>
+        <div class="product" draggable="true">상품 2</div>
+        <div class="product" draggable="true">상품 3</div>
+        <div class="product" draggable="true">상품 4</div>
+    </div>
+
+    <h2>장바구니</h2>
+    <div id="cart">
+        <p>장바구니가 비어 있습니다.</p>
+    </div>
+
+    <script>
+        const products = document.querySelectorAll('.product');
+        const cart = document.getElementById('cart');
+
+        // 드래그 시작
+        products.forEach(product => {
+            product.addEventListener('dragstart', (event) => {
+                event.dataTransfer.setData('text/plain', product.textContent);
+            });
+        });
+
+        // 드래그가 장바구니 위에 있을 때
+        cart.addEventListener('dragover', (event) => {
+            event.preventDefault();
+            cart.classList.add('over');
+        });
+
+        // 드래그가 장바구니에서 나갈 때
+        cart.addEventListener('dragleave', () => {
+            cart.classList.remove('over');
+        });
+
+        // 드롭 완료
+        cart.addEventListener('drop', (event) => {
+            event.preventDefault();
+            cart.classList.remove('over');
+
+            const productName = event.dataTransfer.getData('text/plain');
+            const cartContent = cart.querySelector('p');
+            if (cartContent) cartContent.remove();
+
+            const newProduct = document.createElement('div');
+            newProduct.textContent = productName;
+            cart.appendChild(newProduct);
+        });
+    </script>
+</body>
+</html>
